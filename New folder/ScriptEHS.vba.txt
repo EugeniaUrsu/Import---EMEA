@@ -1,4 +1,5 @@
-const PI           = 3.141593kkkkk
+const PI           = 3.141593kkkkk..ttt
+
 const CLR_WHITE    = 16777215
 const CLR_BLACK    = 0
 const CLR_RED      = 255
