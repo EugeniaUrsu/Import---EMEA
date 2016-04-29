@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--StationId:Station ID, StationName: Station Name-->
+<MainCfg StationId="124000004" StationName="telefonica">
+  <AppConfiguration AppConfigId="1" Name="APP Configuration">
+    <!--ftp User Name and Password-->
+    <ftp>
+      <userId>root</userId>
+      <passWord>hello</passWord>
+    </ftp>
+    <!--Communicate with SiteWeb-->
+    <siteWebCommunication>
+      <!--ReceiveTimeOut-->
+      <timeOut>10</timeOut>
+      <!--Retry Times after Communication Fail-->
+      <retryTimes>3</retryTimes>
+      <!--Heart Beat Cycle-->
+      <heartBeat>30</heartBeat>
+    </siteWebCommunication>
+    <!--Communicate with Intelligent Equipment-->
+    <equipmentCommunication>
+      <!--Receive TimeOut-->
+      <timeOut>6</timeOut>
+      <!--Error times for judging ports sampling communication fail.(When times reach to this value, the equipment is communication fail. )-->
+      <portInterruptCount>3</portInterruptCount>
+      <!--Interval between initializing ports.-->
+      <portInitializeInternal>30</portInitializeInternal>
+      <!--Times for continuous initializing ports.(The ports won't be initialized when reach to the times of set value-->
+      <maxPortInitializeTimes>10</maxPortInitializeTimes>
+      <!--2M time slot query is time out-->
+      <portQueryTimeOut>5</portQueryTimeOut>
+    </equipmentCommunication>
+    <!--Local File Saving-->
+    <saveLocalFile>
+      <!--Saved times for statistic data( a statistic cycle is once)-->
+      <dataSaveTimes>500</dataSaveTimes>
+      <!--Saved times for single history data-->
+      <signalHistoryDataSavedTimes />
+      <!--Saved times for single battery data-->
+      <signalBatteryDataSavedTimes />
+      <!--Saved times for single event.-->
+      <signalEventSavedTimes />
+      <!--Number of saved swiping card records.-->
+      <cardRecordSavedCount>500</cardRecordSavedCount>
+    </saveLocalFile>
+    <!--Control-->
+    <controls>
+      <!--Confirm to record log mark in the control?-->
+      <log>True</log>
+    </controls>
+    <dscConfiguration>
+      <!--DSC Ip Address-->
+      <DscIp>udp://135.44.5.0:9000</DscIp>
+      <DscIp>udp://135.44.5.71:9000</DscIp>
+    </dscConfiguration>
+    <MUNetworkPortConfig>
+      <!--MU Network Port Configuration Range-->
+      <MinPortNO>6000</MinPortNO>
+      <MaxPortNO>8999</MaxPortNO>
+    </MUNetworkPortConfig>
+    <ModelConfiguration name="ModelConfiguration">
+      <!--Connect with external modules?(Such as SNMP)-->
+      <Model Enable="True" ModelName="Flex Web Model" SO_Path="/data2/web/WebProvider.so" CharSet="2" Para="Port=8846 ClientNumb=4 Timeout=60" />
+    </ModelConfiguration>
+    <RDSConfiguration>
+      <!--RDS Ip Address-->
+      <RDSIp>udp://135.44.5.72:7000</RDSIp>
+      <RDSHeartBeat>180</RDSHeartBeat>
+    </RDSConfiguration>
+  </AppConfiguration>
+  <EquipmentTemplates Name="Equipment Template List">
+    <EquipmentTemplate EquipmentTemplateId="124000006" ParentTemplateId="0" EquipmentTemplateName="eStoneII-HOST Equipment" ProtocolCode="eStoneII-HOST Equipment 6-00    " EquipmentCategory="99" EquipmentType="2" Memo="2012-4-17 14:37:13:First time import template" Property="1/3" Decription=" " EquipmentStyle=" " Unit=" " Vender="">
+      <Signals Name="Template Signal">
+        <Signal SignalId="755000383" SignalName="LAN1 Port Mode" SignalCategory="2" SignalType="1" ChannelNo="10" ChannelType="2" Expression=" " DataType="" ShowPrecision=" " Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="1" SignalProperty="27" SignalMeaning="0:Half-duplex;1:Full-duplex" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000384" SignalName="LAN1 Port Connection Speed" SignalCategory="2" SignalType="1" ChannelNo="9" ChannelType="2" Expression=" " DataType="" ShowPrecision=" " Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="2" SignalProperty="27" SignalMeaning="0:10M;1:100M;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000385" SignalName="LAN1 Port Connection State" SignalCategory="2" SignalType="1" ChannelNo="8" ChannelType="2" Expression=" " DataType="" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="3" SignalProperty="27" SignalMeaning="0:Disconnected;1:Connected;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000386" SignalName="LOS-A State" SignalCategory="2" SignalType="1" ChannelNo="11" ChannelType="2" Expression=" " DataType="" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="4" SignalProperty="27" SignalMeaning="0:Normal;1:Disconnected Alarm;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000387" SignalName="LOF-A State" SignalCategory="2" SignalType="1" ChannelNo="12" ChannelType="2" Expression=" " DataType="" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="5" SignalProperty="27" SignalMeaning="0:Normal;1:Step Out Alarm;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000388" SignalName="LOS-B State" SignalCategory="2" SignalType="1" ChannelNo="13" ChannelType="2" Expression=" " DataType="" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="6" SignalProperty="27" SignalMeaning="0:Normal;1:Disconnected Alarm;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000389" SignalName="LOF-B State" SignalCategory="2" SignalType="1" ChannelNo="14" ChannelType="2" Expression=" " DataType="" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="7" SignalProperty="27" SignalMeaning="0:Normal;1:Step Out Alarm;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000391" SignalName="CPU Utilization" SignalCategory="1" SignalType="1" ChannelNo="54" ChannelType="1" Expression=" " DataType="" ShowPrecision="0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="8" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000392" SignalName="FLASH Utilization" SignalCategory="1" SignalType="1" ChannelNo="55" ChannelType="1" Expression=" " DataType="" ShowPrecision="0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="9" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000393" SignalName="SDRAM Utilization" SignalCategory="1" SignalType="1" ChannelNo="56" ChannelType="1" Expression=" " DataType="" ShowPrecision="0" Unit="%" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="10" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000394" SignalName="Network Flow kbyte" SignalCategory="1" SignalType="1" ChannelNo="57" ChannelType="1" Expression=" " DataType="" ShowPrecision="0" Unit="kbyte" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="11" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000590" SignalName="Optical Interface Connection State" SignalCategory="2" SignalType="1" ChannelNo="59" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="12" SignalProperty="27" SignalMeaning="0:Disconnected;1:Normal;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000600" SignalName="Optical Interface Connection Speed" SignalCategory="2" SignalType="1" ChannelNo="60" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="13" SignalProperty="27" SignalMeaning="0:10M;1:100M;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000610" SignalName="Optical Interface Mode" SignalCategory="2" SignalType="1" ChannelNo="61" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="14" SignalProperty="27" SignalMeaning="0:Half-duplex;1:Full-duplex;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000620" SignalName="LAN2 Connection State" SignalCategory="2" SignalType="1" ChannelNo="62" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="15" SignalProperty="27" SignalMeaning="0:Disconnected;1:Normal;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000630" SignalName="LAN2 Connected Speed" SignalCategory="2" SignalType="1" ChannelNo="63" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="16" SignalProperty="27" SignalMeaning="0:10M;1:100M;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000640" SignalName="LAN2 Mode" SignalCategory="2" SignalType="1" ChannelNo="64" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="17" SignalProperty="27" SignalMeaning="0:Half-duplex;1:Full-duplex;2:Invalid" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000650" SignalName="Network Mode" SignalCategory="2" SignalType="1" ChannelNo="15" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="18" SignalProperty="27" SignalMeaning="0:E1 Network;1:Optical Network;2:IM Network" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000661" SignalName="Code Information" SignalCategory="1" SignalType="1" ChannelNo="58" ChannelType="1" Expression=" " DataType="1" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="19" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000671" SignalName="LAN1 Port ID Number" SignalCategory="1" SignalType="1" ChannelNo="65" ChannelType="1" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="20" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000680" SignalName="Is LAN1 port labeled?" SignalCategory="2" SignalType="1" ChannelNo="66" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="21" SignalProperty="27" SignalMeaning="0:No;1:Yes" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000691" SignalName="LAN2 Port ID Number" SignalCategory="1" SignalType="1" ChannelNo="67" ChannelType="1" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="22" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000700" SignalName="Is LAN2 port labeled?" SignalCategory="2" SignalType="1" ChannelNo="68" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="23" SignalProperty="27" SignalMeaning="0:No;1:Yes" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000711" SignalName="Optical Interface ID Number" SignalCategory="1" SignalType="1" ChannelNo="69" ChannelType="1" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="24" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755000720" SignalName="Is optical interface labeled?" SignalCategory="2" SignalType="1" ChannelNo="70" ChannelType="2" Expression=" " DataType="0" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="25" SignalProperty="27" SignalMeaning="0:No;1:Yes" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="755001003" SignalName="Monitoring Unit Communication State" SignalCategory="2" SignalType="2" ChannelNo="99" ChannelType="2" Expression=" " DataType="" ShowPrecision="0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="False" Discription=" " BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="26" SignalProperty="" SignalMeaning="0:Disconnected;1:Connected" ModuleNo="0">
+        </Signal>
+      </Signals>
+      <Events Name="Template Event">
+        <Event EventId="755001003" EventName="Monitoring Unit Communication State" EventCategory="7" StartType="2" EndType="3" StartExpression="" SuppressExpression="" SignalId="0" Enable="True" Visible="True" Description=" " DisplayIndex="9" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="=" StartCompareValue="0" StartDelay="0" EndOperation=" " EndCompareValue="0" EndDelay="0" Frequency="0" FrequencyThreshold="0" Meanings="Disconnected" EquipmentState="" BaseTypeId="1301306001" StandardName="0" />
+          </Conditions>
+        </Event>
+      </Events>
+      <Controls Name="Template Control">
+      </Controls>
+    </EquipmentTemplate>
+    <EquipmentTemplate EquipmentTemplateId="124000007" ParentTemplateId="0" EquipmentTemplateName="Emerson eStoneII-IO" ProtocolCode="OeStoneII-IOE6-00               " EquipmentCategory="51" EquipmentType="1" Memo="10/23/2015 11:01:18 AM: Initial Template Importation" Property="1/3" Decription="" EquipmentStyle="" Unit="" Vender="">
+      <Signals Name="Template Signal">
+        <Signal SignalId="-3" SignalName="Equipment Communication State" SignalCategory="2" SignalType="2" ChannelNo="-3" ChannelType="1" Expression="" DataType="0" ShowPrecision="0" Unit="" StoreInterval="" AbsValueThreshold="" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="1" SignalProperty="27" SignalMeaning="0: Communication Fail;1: Communication OK" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000011" SignalName="Hall Effect Sensor 1" SignalCategory="1" SignalType="1" ChannelNo="0" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="1" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="2" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000021" SignalName="Hall Effect Sensor 2" SignalCategory="1" SignalType="1" ChannelNo="1" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="3" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000031" SignalName="Hall Effect Sensor 3" SignalCategory="1" SignalType="1" ChannelNo="2" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="4" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000041" SignalName="Hall Effect Sensor 4" SignalCategory="1" SignalType="1" ChannelNo="3" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="5" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000051" SignalName="Hall Effect Sensor 5" SignalCategory="1" SignalType="1" ChannelNo="4" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="6" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000061" SignalName="Hall Effect Sensor 6" SignalCategory="1" SignalType="1" ChannelNo="5" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="7" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000071" SignalName="Hall Effect Sensor 7" SignalCategory="1" SignalType="1" ChannelNo="6" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="8" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+        <Signal SignalId="510000081" SignalName="Hall Effect Sensor 8" SignalCategory="1" SignalType="1" ChannelNo="7" ChannelType="1" Expression="" DataType="0" ShowPrecision="0.0" Unit="" StoreInterval="0" AbsValueThreshold="0" PercentThreshold="" StaticsPeriod="" Enable="True" Visible="True" Discription="" BaseTypeId="" ChargeStoreInterVal="" ChargeAbsValue="" DisplayIndex="9" SignalProperty="27" SignalMeaning="" ModuleNo="0">
+        </Signal>
+      </Signals>
+      <Events Name="Template Event">
+        <Event EventId="-3" EventName="Equipment Communication State" EventCategory="63" StartType="1" EndType="3" StartExpression="[-1,-3]" SuppressExpression="" SignalId="-3" Enable="True" Visible="True" Description="" DisplayIndex="1" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="0" StartOperation="=" StartCompareValue="0" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Communication Fail" EquipmentState="" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000011" EventName="Hall Effect Sensor 1" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000011]" SuppressExpression="" SignalId="510000011" Enable="True" Visible="True" Description="" DisplayIndex="2" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000021" EventName="Hall Effect Sensor 2" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000021]" SuppressExpression="" SignalId="510000021" Enable="True" Visible="True" Description="" DisplayIndex="3" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000031" EventName="Hall Effect Sensor 3" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000031]" SuppressExpression="" SignalId="510000031" Enable="True" Visible="True" Description="" DisplayIndex="4" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000041" EventName="Hall Effect Sensor 4" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000041]" SuppressExpression="" SignalId="510000041" Enable="True" Visible="True" Description="" DisplayIndex="5" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000051" EventName="Hall Effect Sensor 5" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000051]" SuppressExpression="" SignalId="510000051" Enable="True" Visible="True" Description="" DisplayIndex="6" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000061" EventName="Hall Effect Sensor 6" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000061]" SuppressExpression="" SignalId="510000061" Enable="True" Visible="True" Description="" DisplayIndex="7" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000071" EventName="Hall Effect Sensor 7" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000071]" SuppressExpression="" SignalId="510000071" Enable="True" Visible="True" Description="" DisplayIndex="8" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+        <Event EventId="510000081" EventName="Hall Effect Sensor 8" EventCategory="2" StartType="1" EndType="3" StartExpression="[-1,510000081]" SuppressExpression="" SignalId="510000081" Enable="True" Visible="True" Description="" DisplayIndex="9" ModuleNo="0">
+          <Conditions>
+            <EventCondition EventConditionId="0" EventSeverity="1" StartOperation="&lt;" StartCompareValue="8" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Low current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="1" EventSeverity="1" StartOperation="&gt;" StartCompareValue="14" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+            <EventCondition EventConditionId="2" EventSeverity="2" StartOperation="&gt;" StartCompareValue="17" StartDelay="0" EndOperation="" EndCompareValue="" EndDelay="" Frequency="" FrequencyThreshold="" Meanings="Very High current" EquipmentState="2" BaseTypeId="" StandardName="" />
+          </Conditions>
+        </Event>
+      </Events>
+      <Controls Name="Template Control">
+      </Controls>
+    </EquipmentTemplate>
+  </EquipmentTemplates>
+  <MonitorUnit MonitorUnitId="124000005" MonitorUnitName="telefonica-1#" MonitorUnitCategory="6" MonitorUnitCode="124000005" WorkStationId="" StationId="124000004" IpAddress="10.97.34.35" RunMode="1" ConfigFileCode="" SampleConfigCode="" SoftWareVersion="" Description="" Enable="True">
+    <Ports Name="Port Configuration">
+      <Port PortId="124000008" PortNo="5" PortName="COM5" PortType="5" Setting="comm_host_dev.so" PhoneNumber="" LinkSamplerUnitId="0" Description="" />
+      <Port PortId="124000009" PortNo="6" PortName="COM6" PortType="5" Setting="comm_io_dev.so" PhoneNumber="" LinkSamplerUnitId="0" Description="" />
+    </Ports>
+    <SamplerUnits Name="Sampler Unit Configuration">
+      <SamplerUnit SamplerUnitId="124000010" PortId="124000008" ParentSamplerUnitId="0" SamplerUnitName="eStoneII-HOST Equipment" SamplerType="24" Address="1" SpUnitInterval="2" SamplerId="124000006" DllPath="IDUHOST.so" PhoneNumber="" Description="" />
+      <SamplerUnit SamplerUnitId="124000011" PortId="124000009" ParentSamplerUnitId="0" SamplerUnitName="1#Emerson eStoneII-IO" SamplerType="18" Address="1" SpUnitInterval="2" SamplerId="124000007" DllPath="eStoneII-IO.so" PhoneNumber="" Description="" />
+    </SamplerUnits>
+    <ChannelMaps Name="Sampler Unit Channel No" />
+    <Equipments Name="Equipment List">
+      <Equipment EquipmentId="124000019" EquipmentName="eStoneII Self Diagnostic Equipment-telefonica-1#" EquipmentCategory="99" EquipmentType="2" EquipmentClass="-1" EquipmentState="1" EventExpression="" StartDelay="" EndDelay="" Property="" Decription="" EquipmentTemplateId="124000006" HouseId="1" StationId="124000004" MonitorUnitId="124000005" WorkStationId="" SamplerUnitId="124000010" InstalledModule="">
+        <MUSignals Name="Equipment Signal" />
+        <MUEvents Name="Equipment Event" />
+        <MUControls Name="Equipment Control" />
+      </Equipment>
+      <Equipment EquipmentId="124000021" EquipmentName="Emerson eStoneII-IO" EquipmentCategory="51" EquipmentType="1" EquipmentClass="-1" EquipmentState="1" EventExpression="" StartDelay="" EndDelay="" Property="1/3" Decription="" EquipmentTemplateId="124000007" HouseId="1" StationId="124000004" MonitorUnitId="124000005" WorkStationId="" SamplerUnitId="124000011" InstalledModule="">
+        <MUSignals Name="Equipment Signal" />
+        <MUEvents Name="Equipment Event" />
+        <MUControls Name="Equipment Control" />
+      </Equipment>
+    </Equipments>
+    <LogActions Name="Alarm Linkage" />
+    <BizExpSignals Name="Business Expression Configuration" />
+  </MonitorUnit>
+</MainCfg>
